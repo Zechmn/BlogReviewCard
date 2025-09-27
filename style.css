@@ -1,0 +1,191 @@
+/* Import Figtree font */
+@font-face {
+  font-family: 'Figtree';
+  src: url('./assets/fonts/Figtree-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('./assets/fonts/Figtree-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* CSS Custom Properties for Colors */
+:root {
+  --primary-dark-slate: #1A202C;
+  --secondary-grey: #718096;
+  --background-white: #FFFFFF;
+  --text-charcoal: #2D3748;
+  --accent-blue: #4299E1;
+  --border-light-grey: #E2E8F0;
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Figtree', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-charcoal);
+  background-color: var(--yellow);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 384px;
+  margin: 0 auto;
+}
+
+/* Blog Card */
+.blog-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--gray-950);
+  box-shadow: 8px 8px 0px 0px var(--gray-950);
+  padding: 16px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  box-shadow: 16px 16px 0px 0px var(--gray-950);
+}
+
+/* Card Image */
+.card-image {
+  margin-bottom: 16px;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Card Content */
+.card-content {
+  padding: 8px 0;
+}
+
+/* Category Tag */
+.card-category {
+  display: inline-block;
+  background-color: var(--yellow);
+  color: var(--gray-950);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+/* Date */
+.card-date {
+  font-size: 14px;
+  color: var(--gray-950);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.card-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--gray-950);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.blog-card:hover .card-title {
+  color: var(--yellow);
+}
+
+/* Description */
+.card-description {
+  font-size: 16px;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Author Section */
+.card-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--gray-950);
+}
+
+/* Responsive Design */
+@media (max-width: 375px) {
+  .container {
+    max-width: 327px;
+    padding: 0 16px;
+  }
+  
+  .blog-card {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 384px;
+  }
+}
+
+/* Focus States for Accessibility */
+.blog-card:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.blog-card:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Ensure the card maintains aspect ratio and layout */
+@media (prefers-reduced-motion: reduce) {
+  .blog-card,
+  .card-title {
+    transition: none;
+  }
+}
